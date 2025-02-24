@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import xin.eason.domain.auth.service.ILoginService;
 import xin.eason.types.common.Result;
-import xin.eason.domain.auth.model.valobj.UserInfoVO;
+
+import java.util.Map;
 
 @Slf4j
 @CrossOrigin
@@ -35,8 +36,8 @@ public class LoginController {
      * @return 用户信息的视图对象
      */
     @GetMapping("/check_login")
-    public Result<UserInfoVO> checkLogin(String ticket){
-        UserInfoVO userInfoVO = loginService.checkLogin(ticket);
-        return Result.success(userInfoVO);
+    public Result<Map<String, String>> checkLogin(String ticket){
+        Map<String, String> userInfoMap = loginService.checkLogin(ticket);
+        return Result.success(userInfoMap);
     }
 }

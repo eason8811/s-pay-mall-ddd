@@ -1,6 +1,7 @@
 package xin.eason.domain.auth.service;
 
-import xin.eason.domain.auth.model.valobj.UserInfoVO;
+
+import java.util.Map;
 
 public interface ILoginService {
 
@@ -21,7 +22,7 @@ public interface ILoginService {
     /**
      * 检查登录状态
      * @param ticket 用于生成二维码的 <b>Ticket</b>
-     * @return 用户信息的视图对象
+     * @return 用户信息的 Map
      */
-    UserInfoVO checkLogin(String ticket);
+    Map<String, String> checkLogin(String ticket);
 }
