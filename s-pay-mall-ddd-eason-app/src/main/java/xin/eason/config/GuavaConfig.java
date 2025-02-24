@@ -13,7 +13,7 @@ public class GuavaConfig {
     @Bean(name = "cache")
     public Cache<String, String> cache() {
         return CacheBuilder.newBuilder()
-                .expireAfterWrite(3, TimeUnit.SECONDS)
+                .expireAfterWrite(10, TimeUnit.MINUTES)
                 .build();
     }
 

@@ -1,5 +1,0 @@
-spring:
-  config:
-    name: s-pay-mall-ddd-eason-app
-  profiles:
-    active: dev
