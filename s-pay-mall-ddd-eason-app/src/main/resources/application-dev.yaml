@@ -19,3 +19,9 @@ spring:
     address: 192.168.226.128
     port: 3306
     database: s-pay-mall
+  rabbitmq:
+    host: 192.168.226.128
+    port: 5672
+    virtual-host: /s-pay-mall
+    username: s-pay-mall
+    password: 123456

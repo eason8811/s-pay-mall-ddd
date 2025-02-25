@@ -47,7 +47,7 @@ public class LoginPort implements ILoginPort {
     public void sendLoginTemplate(String openid) {
         HashMap<String, String> dataMap = new HashMap<>();
         dataMap.put("openId", openid);
-        sendTemplate(LOCATION_TEMP_ID, openid, "", cache.getIfPresent("access_token"), dataMap);
+        sendTemplate(LOGIN_TEMP_ID, openid, "", cache.getIfPresent("access_token"), dataMap);
     }
 
     /**

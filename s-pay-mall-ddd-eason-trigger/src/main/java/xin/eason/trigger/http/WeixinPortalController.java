@@ -1,14 +1,12 @@
 package xin.eason.trigger.http;
 
 import lombok.RequiredArgsConstructor;
-import xin.eason.types.sdk.wechat.MessageTextEntity;
-import xin.eason.types.sdk.wechat.SignatureUtil;
-import xin.eason.types.sdk.wechat.XmlUtil;
 import xin.eason.domain.auth.service.ILoginService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
+import xin.eason.types.sdk.wechat.*;
 
 /**
  * 微信服务对接，对接地址：<a href="http://xfg-studio.natapp1.cc/api/v1/weixin/portal/receive">/api/v1/weixin/portal/receive</a>
@@ -63,14 +61,26 @@ public class WeixinPortalController {
         try {
             log.info("接收微信公众号信息请求{}开始 {}", openid, requestBody);
             // 消息转换
-            MessageTextEntity message = XmlUtil.xmlToBean(requestBody, MessageTextEntity.class);
-
-            if ("event".equals(message.getMsgType()) && "SCAN".equals(message.getEvent())) {
+            if (requestBody.contains("<Event><![CDATA[SCAN]]></Event>") || requestBody.contains("<Event><![CDATA[subscribe]]></Event>")) {
+                // SCAN 事件 和 关注事件
+                QrCodeScanEventEntity message = XmlUtil.xmlToBean(requestBody, QrCodeScanEventEntity.class);
                 loginService.saveLoginState(message.getTicket(), openid);
-                return buildMessageTextEntity(openid, "登录成功");
+                return "";
             }
 
-            return buildMessageTextEntity(openid, "你好，" + message.getContent());
+            if (requestBody.contains("<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>")) {
+                // 模板信息发送成功事件
+                TemplateSendEventEntity message = XmlUtil.xmlToBean(requestBody, TemplateSendEventEntity.class);
+                log.info("模板信息发送成功! 信息ID: {}", message.getMsgId());
+                return "";
+            }
+
+            if (requestBody.contains("<MsgType><![CDATA[text]]></MsgType>")) {
+                // 普通消息事件
+                MessageTextEntity message = XmlUtil.xmlToBean(requestBody, MessageTextEntity.class);
+                return buildMessageTextEntity(openid, "你好，" + message.getContent());
+            }
+            return "";
         } catch (Exception e) {
             log.error("接收微信公众号信息请求{}失败 {}", openid, requestBody, e);
             return "";

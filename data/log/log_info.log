@@ -2942,3 +2942,787 @@ version             : 1.4.21
 25-02-25.18:58:09.885 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] INFO  OrderSuccessListener   - 已收到支付成功回调 MQ 消息: 4306409768933497
 25-02-25.19:00:10.520 [HikariPool-1 housekeeper] WARN  HikariPool             - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m7s846ms957µs200ns).
 25-02-25.19:00:10.558 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-02-25.19:00:14.219 [main            ] INFO  Application            - Starting Application using Java 17.0.13 with PID 51828 (D:\Code\codes\s-pay-mall-ddd-eason\s-pay-mall-ddd-eason-app\target\classes started by Eason in D:\Code\codes\s-pay-mall-ddd-eason)
+25-02-25.19:00:14.220 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-02-25.19:00:14.960 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port 8080 (http)
+25-02-25.19:00:14.973 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8080"]
+25-02-25.19:00:14.974 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-02-25.19:00:14.974 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/10.1.34]
+25-02-25.19:00:15.024 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-02-25.19:00:15.025 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 774 ms
+25-02-25.19:00:15.658 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-02-25.19:00:15.888 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8080"]
+25-02-25.19:00:15.903 [main            ] INFO  TomcatWebServer        - Tomcat started on port 8080 (http) with context path '/'
+25-02-25.19:00:15.904 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [192.168.226.128:5672]
+25-02-25.19:00:15.936 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#4fecf308:0/SimpleConnection@a120b9 [delegate=amqp://s-pay-mall@192.168.226.128:5672//s-pay-mall, localPort=59698]
+25-02-25.19:00:15.982 [main            ] INFO  Application            - Started Application in 2.133 seconds (process running for 2.519)
+25-02-25.19:00:15.984 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] INFO  OrderSuccessListener   - 已收到支付成功回调 MQ 消息: 4306409768933497
+25-02-25.19:00:16.040 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-02-25.19:00:16.169 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] INFO  HikariPool             - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2117547
+25-02-25.19:00:16.170 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-02-25.19:00:16.326 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] ERROR PayPort                - 发送模板信息失败! 错误代码: 41001, 错误信息: access_token missing rid: 67bda2bf-06542355-189a9c7e
+25-02-25.19:00:16.326 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] ERROR OrderSuccessListener   - 更新支付成功订单信息出错! 订单ID: 4306409768933497
+25-02-25.19:00:17.982 [http-nio-8080-exec-1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-02-25.19:00:17.983 [http-nio-8080-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-02-25.19:00:17.983 [http-nio-8080-exec-1] INFO  DispatcherServlet      - Completed initialization in 0 ms
+25-02-25.19:00:18.005 [http-nio-8080-exec-1] INFO  LoginPort              - 正在获取 Access Token
+25-02-25.19:00:18.005 [http-nio-8080-exec-1] INFO  LoginPort              - 缓存无 Access Token 向微信公众平台获取
+25-02-25.19:00:18.302 [http-nio-8080-exec-1] INFO  LoginPort              - 获取 Access Token 成功: 89_oIc4LGhFO-i8QwxAEpVPnCe-oGm-n11bjiFbJDCGIbrSOPSxpm5uUaq_g7X6G3rVTUQuxwHboxjTKQgRWyb2pzWLrbilzvYiCTOf5oW2uaPPFNMSAGJXBFuU7VENVXjAEACKM
+25-02-25.19:00:18.302 [http-nio-8080-exec-1] INFO  LoginPort              - 正在获取 Ticket
+25-02-25.19:00:18.759 [http-nio-8080-exec-1] INFO  LoginPort              - 获取 Ticket 成功: gQEF8jwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyTVk5VFZuZ0dkZEkxMDAwME0wN0IAAgTBor1nAwQAAAAA
+25-02-25.19:00:40.089 [http-nio-8080-exec-4] INFO  WeixinPortalController - 接收微信公众号信息请求okOpN7JIwbubh-y9lX9EQWpEwGfk开始 <xml><ToUserName><![CDATA[gh_7e8ebd642fae]]></ToUserName>
+<FromUserName><![CDATA[okOpN7JIwbubh-y9lX9EQWpEwGfk]]></FromUserName>
+<CreateTime>1740481238</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[SCAN]]></Event>
+<EventKey><![CDATA[1740481218304]]></EventKey>
+<Ticket><![CDATA[gQEF8jwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyTVk5VFZuZ0dkZEkxMDAwME0wN0IAAgTBor1nAwQAAAAA]]></Ticket>
+</xml>
+25-02-25.19:00:40.795 [http-nio-8080-exec-4] INFO  LoginPort              - 发送模板信息成功, msgId: 3873674101759672333
+25-02-25.19:00:41.348 [http-nio-8080-exec-6] INFO  WeixinPortalController - 接收微信公众号信息请求okOpN7JIwbubh-y9lX9EQWpEwGfk开始 <xml><ToUserName><![CDATA[gh_7e8ebd642fae]]></ToUserName>
+<FromUserName><![CDATA[okOpN7JIwbubh-y9lX9EQWpEwGfk]]></FromUserName>
+<CreateTime>1740481240</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>
+<MsgID>3873674101759672333</MsgID>
+<Status><![CDATA[success]]></Status>
+</xml>
+25-02-25.19:00:41.354 [http-nio-8080-exec-6] ERROR WeixinPortalController - 接收微信公众号信息请求okOpN7JIwbubh-y9lX9EQWpEwGfk失败 <xml><ToUserName><![CDATA[gh_7e8ebd642fae]]></ToUserName>
+<FromUserName><![CDATA[okOpN7JIwbubh-y9lX9EQWpEwGfk]]></FromUserName>
+<CreateTime>1740481240</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>
+<MsgID>3873674101759672333</MsgID>
+<Status><![CDATA[success]]></Status>
+</xml>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$UnknownFieldException: No such field xin.eason.types.sdk.wechat.MessageTextEntity.MsgID
+---- Debugging information ----
+message             : No such field xin.eason.types.sdk.wechat.MessageTextEntity.MsgID
+field               : MsgID
+class               : xin.eason.types.sdk.wechat.MessageTextEntity
+required-type       : xin.eason.types.sdk.wechat.MessageTextEntity
+converter-type      : com.thoughtworks.xstream.converters.reflection.ReflectionConverter
+version             : 1.4.21
+-------------------------------
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.handleUnknownField(AbstractReflectionConverter.java:517)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal(AbstractReflectionConverter.java:366)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:277)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.start(TreeUnmarshaller.java:136)
+	at com.thoughtworks.xstream.core.AbstractTreeMarshallingStrategy.unmarshal(AbstractTreeMarshallingStrategy.java:32)
+	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1468)
+	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1445)
+	at com.thoughtworks.xstream.XStream.fromXML(XStream.java:1325)
+	at com.thoughtworks.xstream.XStream.fromXML(XStream.java:1316)
+	at xin.eason.types.sdk.wechat.XmlUtil.xmlToBean(XmlUtil.java:148)
+	at xin.eason.trigger.http.WeixinPortalController.post(WeixinPortalController.java:66)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+25-02-25.19:00:49.374 [http-nio-8080-exec-2] INFO  LoginServiceImpl       - 正在查询登录状态...
+25-02-25.19:00:49.374 [http-nio-8080-exec-2] INFO  LoginServiceImpl       - 用户: okOpN7JIwbubh-y9lX9EQWpEwGfk, 已登录!
+25-02-25.19:00:51.301 [http-nio-8080-exec-5] INFO  PayController          - 正在创建订单...
+25-02-25.19:00:51.433 [http-nio-8080-exec-5] INFO  OrderService           - 创建支付订单成功, payOrder: PayOrderEntity{userId='null', orderId='1729931569279556', payUrl='<form name="punchout_form" method="post" action="https://openapi-sandbox.dl.alipaydev.com/gateway.do?charset=utf-8&method=alipay.trade.page.pay&sign=aZUOhBUSknLXiIgeiMiLEUQbI8Mo0RD1G2jae4GUoqpw6NxpSUbz614E3Era7leEtzpK8ckt2ufcODPr9y%2FHwmx5Mvx4vBBrPDlTybyUjHcWx87PW8QgYlZp9k6S9udxy4XjBTfn%2Ff7ipw9%2Fqv13ZTeSdnF40d3ssyQWD1fFg3UPDmghcCmu5EtOO11SQCfXuja0h%2BAu1w6mSAjKgEOei%2F4YsjVfBJy5AKKdqCZ8PWyFH%2BH4X842cvA3hAWnK56ZUy1Pgxsg8Nb6vzVDH4na3CyqYp2kpyGGVlAdQGtBt76HNAQGfzH0XTAqMwafTyECI1O9YeMrZ5NRcxL2A%2FYJfw%3D%3D&return_url=https%3A%2F%2Fgaga.plus&notify_url=http%3A%2F%2Feason.nat300.top%2Fapi%2Fv1%2Falipay%2Falipay_notify_url&version=1.0&app_id=9021000143682740&sign_type=RSA2&timestamp=2025-02-25+19%3A00%3A51&alipay_sdk=alipay-sdk-java-4.38.157.ALL&format=json">
+<input type="hidden" name="biz_content" value="{&quot;out_trade_no&quot;:&quot;1729931569279556&quot;,&quot;total_amount&quot;:&quot;1.68&quot;,&quot;subject&quot;:&quot;测试商品&quot;,&quot;product_code&quot;:&quot;FAST_INSTANT_TRADE_PAY&quot;}">
+<input type="submit" value="立即支付" style="display:none" >
+</form>
+<script>document.forms[0].submit();</script>', orderStatus=PAY_WAITE}
+25-02-25.19:00:51.445 [http-nio-8080-exec-5] INFO  OrderService           - 支付 URL: 
+<form name="punchout_form" method="post" action="https://openapi-sandbox.dl.alipaydev.com/gateway.do?charset=utf-8&method=alipay.trade.page.pay&sign=aZUOhBUSknLXiIgeiMiLEUQbI8Mo0RD1G2jae4GUoqpw6NxpSUbz614E3Era7leEtzpK8ckt2ufcODPr9y%2FHwmx5Mvx4vBBrPDlTybyUjHcWx87PW8QgYlZp9k6S9udxy4XjBTfn%2Ff7ipw9%2Fqv13ZTeSdnF40d3ssyQWD1fFg3UPDmghcCmu5EtOO11SQCfXuja0h%2BAu1w6mSAjKgEOei%2F4YsjVfBJy5AKKdqCZ8PWyFH%2BH4X842cvA3hAWnK56ZUy1Pgxsg8Nb6vzVDH4na3CyqYp2kpyGGVlAdQGtBt76HNAQGfzH0XTAqMwafTyECI1O9YeMrZ5NRcxL2A%2FYJfw%3D%3D&return_url=https%3A%2F%2Fgaga.plus&notify_url=http%3A%2F%2Feason.nat300.top%2Fapi%2Fv1%2Falipay%2Falipay_notify_url&version=1.0&app_id=9021000143682740&sign_type=RSA2&timestamp=2025-02-25+19%3A00%3A51&alipay_sdk=alipay-sdk-java-4.38.157.ALL&format=json">
+<input type="hidden" name="biz_content" value="{&quot;out_trade_no&quot;:&quot;1729931569279556&quot;,&quot;total_amount&quot;:&quot;1.68&quot;,&quot;subject&quot;:&quot;测试商品&quot;,&quot;product_code&quot;:&quot;FAST_INSTANT_TRADE_PAY&quot;}">
+<input type="submit" value="立即支付" style="display:none" >
+</form>
+<script>document.forms[0].submit();</script>
+25-02-25.19:00:51.445 [http-nio-8080-exec-5] INFO  AbstractOrderService   - 创建订单-完成，生成支付单。userId: okOpN7JIwbubh-y9lX9EQWpEwGfk orderId: 1729931569279556 payUrl: <form name="punchout_form" method="post" action="https://openapi-sandbox.dl.alipaydev.com/gateway.do?charset=utf-8&method=alipay.trade.page.pay&sign=aZUOhBUSknLXiIgeiMiLEUQbI8Mo0RD1G2jae4GUoqpw6NxpSUbz614E3Era7leEtzpK8ckt2ufcODPr9y%2FHwmx5Mvx4vBBrPDlTybyUjHcWx87PW8QgYlZp9k6S9udxy4XjBTfn%2Ff7ipw9%2Fqv13ZTeSdnF40d3ssyQWD1fFg3UPDmghcCmu5EtOO11SQCfXuja0h%2BAu1w6mSAjKgEOei%2F4YsjVfBJy5AKKdqCZ8PWyFH%2BH4X842cvA3hAWnK56ZUy1Pgxsg8Nb6vzVDH4na3CyqYp2kpyGGVlAdQGtBt76HNAQGfzH0XTAqMwafTyECI1O9YeMrZ5NRcxL2A%2FYJfw%3D%3D&return_url=https%3A%2F%2Fgaga.plus&notify_url=http%3A%2F%2Feason.nat300.top%2Fapi%2Fv1%2Falipay%2Falipay_notify_url&version=1.0&app_id=9021000143682740&sign_type=RSA2&timestamp=2025-02-25+19%3A00%3A51&alipay_sdk=alipay-sdk-java-4.38.157.ALL&format=json">
+<input type="hidden" name="biz_content" value="{&quot;out_trade_no&quot;:&quot;1729931569279556&quot;,&quot;total_amount&quot;:&quot;1.68&quot;,&quot;subject&quot;:&quot;测试商品&quot;,&quot;product_code&quot;:&quot;FAST_INSTANT_TRADE_PAY&quot;}">
+<input type="submit" value="立即支付" style="display:none" >
+</form>
+<script>document.forms[0].submit();</script>
+25-02-25.19:00:51.445 [http-nio-8080-exec-5] INFO  PayController          - 创建订单成功!
+25-02-25.19:01:16.665 [http-nio-8080-exec-8] INFO  PayController          - 支付回调，消息接收 TRADE_SUCCESS
+25-02-25.19:01:16.666 [http-nio-8080-exec-8] INFO  PayController          - 支付回调，交易名称: 测试商品
+25-02-25.19:01:16.666 [http-nio-8080-exec-8] INFO  PayController          - 支付回调，交易状态: TRADE_SUCCESS
+25-02-25.19:01:16.666 [http-nio-8080-exec-8] INFO  PayController          - 支付回调，支付宝交易凭证号: 2025022522001492730505718188
+25-02-25.19:01:16.666 [http-nio-8080-exec-8] INFO  PayController          - 支付回调，商户订单号: 1729931569279556
+25-02-25.19:01:16.666 [http-nio-8080-exec-8] INFO  PayController          - 支付回调，交易金额: 1.68
+25-02-25.19:01:16.666 [http-nio-8080-exec-8] INFO  PayController          - 支付回调，买家在支付宝唯一id: 2088722057192739
+25-02-25.19:01:16.666 [http-nio-8080-exec-8] INFO  PayController          - 支付回调，买家付款时间: 2025-02-25 19:01:14
+25-02-25.19:01:16.666 [http-nio-8080-exec-8] INFO  PayController          - 支付回调，买家付款金额: 1.68
+25-02-25.19:01:16.666 [http-nio-8080-exec-8] INFO  PayController          - 支付回调，支付回调，更新订单 1729931569279556
+25-02-25.19:01:16.687 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] INFO  OrderSuccessListener   - 已收到支付成功回调 MQ 消息: 1729931569279556
+25-02-25.19:01:16.693 [AMQP Connection 192.168.226.128:5672] INFO  AbstractPayEvent       - 发送成功! 返回: Confirm [ack=true]
+25-02-25.19:01:17.300 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] INFO  PayPort                - 发送模板信息成功, msgId: 3873674713406636049
+25-02-25.19:01:17.768 [http-nio-8080-exec-9] INFO  WeixinPortalController - 接收微信公众号信息请求okOpN7JIwbubh-y9lX9EQWpEwGfk开始 <xml><ToUserName><![CDATA[gh_7e8ebd642fae]]></ToUserName>
+<FromUserName><![CDATA[okOpN7JIwbubh-y9lX9EQWpEwGfk]]></FromUserName>
+<CreateTime>1740481276</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>
+<MsgID>3873674713406636049</MsgID>
+<Status><![CDATA[success]]></Status>
+</xml>
+25-02-25.19:01:17.772 [http-nio-8080-exec-9] ERROR WeixinPortalController - 接收微信公众号信息请求okOpN7JIwbubh-y9lX9EQWpEwGfk失败 <xml><ToUserName><![CDATA[gh_7e8ebd642fae]]></ToUserName>
+<FromUserName><![CDATA[okOpN7JIwbubh-y9lX9EQWpEwGfk]]></FromUserName>
+<CreateTime>1740481276</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>
+<MsgID>3873674713406636049</MsgID>
+<Status><![CDATA[success]]></Status>
+</xml>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$UnknownFieldException: No such field xin.eason.types.sdk.wechat.MessageTextEntity.MsgID
+---- Debugging information ----
+message             : No such field xin.eason.types.sdk.wechat.MessageTextEntity.MsgID
+field               : MsgID
+class               : xin.eason.types.sdk.wechat.MessageTextEntity
+required-type       : xin.eason.types.sdk.wechat.MessageTextEntity
+converter-type      : com.thoughtworks.xstream.converters.reflection.ReflectionConverter
+version             : 1.4.21
+-------------------------------
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.handleUnknownField(AbstractReflectionConverter.java:517)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal(AbstractReflectionConverter.java:366)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:277)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.start(TreeUnmarshaller.java:136)
+	at com.thoughtworks.xstream.core.AbstractTreeMarshallingStrategy.unmarshal(AbstractTreeMarshallingStrategy.java:32)
+	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1468)
+	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1445)
+	at com.thoughtworks.xstream.XStream.fromXML(XStream.java:1325)
+	at com.thoughtworks.xstream.XStream.fromXML(XStream.java:1316)
+	at xin.eason.types.sdk.wechat.XmlUtil.xmlToBean(XmlUtil.java:148)
+	at xin.eason.trigger.http.WeixinPortalController.post(WeixinPortalController.java:66)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+25-02-25.19:26:09.566 [http-nio-8080-exec-3] INFO  WeixinPortalController - 接收微信公众号信息请求okOpN7JIwbubh-y9lX9EQWpEwGfk开始 <xml><ToUserName><![CDATA[gh_7e8ebd642fae]]></ToUserName>
+<FromUserName><![CDATA[okOpN7JIwbubh-y9lX9EQWpEwGfk]]></FromUserName>
+<CreateTime>1740482767</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[111]]></Content>
+<MsgId>24917722868722959</MsgId>
+</xml>
+25-02-25.19:35:47.272 [http-nio-8080-exec-7] INFO  WeixinPortalController - 接收微信公众号信息请求okOpN7JIwbubh-y9lX9EQWpEwGfk开始 <xml><ToUserName><![CDATA[gh_7e8ebd642fae]]></ToUserName>
+<FromUserName><![CDATA[okOpN7JIwbubh-y9lX9EQWpEwGfk]]></FromUserName>
+<CreateTime>1740483345</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[SCAN]]></Event>
+<EventKey><![CDATA[1740481218304]]></EventKey>
+<Ticket><![CDATA[gQEF8jwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyTVk5VFZuZ0dkZEkxMDAwME0wN0IAAgTBor1nAwQAAAAA]]></Ticket>
+</xml>
+25-02-25.19:35:47.334 [http-nio-8080-exec-7] ERROR LoginPort              - 发送模板信息失败! 错误代码: 41001, 错误信息: access_token missing rid: 67bdab12-0eb693f1-5adb7d06
+25-02-25.19:35:47.334 [http-nio-8080-exec-7] ERROR WeixinPortalController - 接收微信公众号信息请求okOpN7JIwbubh-y9lX9EQWpEwGfk失败 <xml><ToUserName><![CDATA[gh_7e8ebd642fae]]></ToUserName>
+<FromUserName><![CDATA[okOpN7JIwbubh-y9lX9EQWpEwGfk]]></FromUserName>
+<CreateTime>1740483345</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[SCAN]]></Event>
+<EventKey><![CDATA[1740481218304]]></EventKey>
+<Ticket><![CDATA[gQEF8jwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyTVk5VFZuZ0dkZEkxMDAwME0wN0IAAgTBor1nAwQAAAAA]]></Ticket>
+</xml>
+xin.eason.types.exception.AppException: null
+	at xin.eason.infrastructure.adapter.port.LoginPort.sendTemplate(LoginPort.java:87)
+	at xin.eason.infrastructure.adapter.port.LoginPort.sendLoginTemplate(LoginPort.java:50)
+	at xin.eason.domain.auth.service.LoginServiceImpl.saveLoginState(LoginServiceImpl.java:33)
+	at xin.eason.trigger.http.WeixinPortalController.post(WeixinPortalController.java:69)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+25-02-25.19:37:03.679 [http-nio-8080-exec-5] INFO  WeixinPortalController - 接收微信公众号信息请求okOpN7JIwbubh-y9lX9EQWpEwGfk开始 <xml><ToUserName><![CDATA[gh_7e8ebd642fae]]></ToUserName>
+<FromUserName><![CDATA[okOpN7JIwbubh-y9lX9EQWpEwGfk]]></FromUserName>
+<CreateTime>1740483422</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[SCAN]]></Event>
+<EventKey><![CDATA[1740481218304]]></EventKey>
+<Ticket><![CDATA[gQEF8jwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyTVk5VFZuZ0dkZEkxMDAwME0wN0IAAgTBor1nAwQAAAAA]]></Ticket>
+</xml>
+25-02-25.19:37:03.726 [http-nio-8080-exec-5] ERROR LoginPort              - 发送模板信息失败! 错误代码: 41001, 错误信息: access_token missing rid: 67bdab5e-00337b92-22a6f81a
+25-02-25.19:37:03.727 [http-nio-8080-exec-5] ERROR WeixinPortalController - 接收微信公众号信息请求okOpN7JIwbubh-y9lX9EQWpEwGfk失败 <xml><ToUserName><![CDATA[gh_7e8ebd642fae]]></ToUserName>
+<FromUserName><![CDATA[okOpN7JIwbubh-y9lX9EQWpEwGfk]]></FromUserName>
+<CreateTime>1740483422</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[SCAN]]></Event>
+<EventKey><![CDATA[1740481218304]]></EventKey>
+<Ticket><![CDATA[gQEF8jwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyTVk5VFZuZ0dkZEkxMDAwME0wN0IAAgTBor1nAwQAAAAA]]></Ticket>
+</xml>
+xin.eason.types.exception.AppException: null
+	at xin.eason.infrastructure.adapter.port.LoginPort.sendTemplate(LoginPort.java:87)
+	at xin.eason.infrastructure.adapter.port.LoginPort.sendLoginTemplate(LoginPort.java:50)
+	at xin.eason.domain.auth.service.LoginServiceImpl.saveLoginState(LoginServiceImpl.java:33)
+	at xin.eason.trigger.http.WeixinPortalController.post(WeixinPortalController.java:69)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+25-02-25.19:37:07.991 [http-nio-8080-exec-9] INFO  WeixinPortalController - 接收微信公众号信息请求okOpN7JIwbubh-y9lX9EQWpEwGfk开始 <xml><ToUserName><![CDATA[gh_7e8ebd642fae]]></ToUserName>
+<FromUserName><![CDATA[okOpN7JIwbubh-y9lX9EQWpEwGfk]]></FromUserName>
+<CreateTime>1740483426</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[unsubscribe]]></Event>
+<EventKey><![CDATA[]]></EventKey>
+</xml>
+25-02-25.19:37:18.810 [http-nio-8080-exec-1] INFO  WeixinPortalController - 接收微信公众号信息请求okOpN7JIwbubh-y9lX9EQWpEwGfk开始 <xml><ToUserName><![CDATA[gh_7e8ebd642fae]]></ToUserName>
+<FromUserName><![CDATA[okOpN7JIwbubh-y9lX9EQWpEwGfk]]></FromUserName>
+<CreateTime>1740483437</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[subscribe]]></Event>
+<EventKey><![CDATA[qrscene_1740481218304]]></EventKey>
+<Ticket><![CDATA[gQEF8jwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyTVk5VFZuZ0dkZEkxMDAwME0wN0IAAgTBor1nAwQAAAAA]]></Ticket>
+</xml>
+25-02-25.19:45:03.998 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-02-25.19:45:04.991 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-02-25.19:45:04.991 [SpringApplicationShutdownHook] INFO  GracefulShutdown       - Commencing graceful shutdown. Waiting for active requests to complete
+25-02-25.19:45:05.067 [tomcat-shutdown ] INFO  GracefulShutdown       - Graceful shutdown complete
+25-02-25.19:45:05.072 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-02-25.19:45:05.081 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-02-25.19:45:09.213 [main            ] INFO  Application            - Starting Application using Java 17.0.13 with PID 38604 (D:\Code\codes\s-pay-mall-ddd-eason\s-pay-mall-ddd-eason-app\target\classes started by Eason in D:\Code\codes\s-pay-mall-ddd-eason)
+25-02-25.19:45:09.215 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-02-25.19:45:09.959 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port 8080 (http)
+25-02-25.19:45:09.970 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8080"]
+25-02-25.19:45:09.971 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-02-25.19:45:09.971 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/10.1.34]
+25-02-25.19:45:10.023 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-02-25.19:45:10.023 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 779 ms
+25-02-25.19:45:10.619 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-02-25.19:45:10.838 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8080"]
+25-02-25.19:45:10.852 [main            ] INFO  TomcatWebServer        - Tomcat started on port 8080 (http) with context path '/'
+25-02-25.19:45:10.854 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [192.168.226.128:5672]
+25-02-25.19:45:10.888 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#58278366:0/SimpleConnection@69069866 [delegate=amqp://s-pay-mall@192.168.226.128:5672//s-pay-mall, localPort=64705]
+25-02-25.19:45:10.924 [main            ] INFO  Application            - Started Application in 2.081 seconds (process running for 2.473)
+25-02-25.19:45:14.655 [http-nio-8080-exec-1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-02-25.19:45:14.655 [http-nio-8080-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-02-25.19:45:14.656 [http-nio-8080-exec-1] INFO  DispatcherServlet      - Completed initialization in 1 ms
+25-02-25.19:45:14.685 [http-nio-8080-exec-1] INFO  WeixinPortalController - 接收微信公众号信息请求okOpN7JIwbubh-y9lX9EQWpEwGfk开始 <xml><ToUserName><![CDATA[gh_7e8ebd642fae]]></ToUserName>
+<FromUserName><![CDATA[okOpN7JIwbubh-y9lX9EQWpEwGfk]]></FromUserName>
+<CreateTime>1740483913</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[SCAN]]></Event>
+<EventKey><![CDATA[1740481218304]]></EventKey>
+<Ticket><![CDATA[gQEF8jwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyTVk5VFZuZ0dkZEkxMDAwME0wN0IAAgTBor1nAwQAAAAA]]></Ticket>
+</xml>
+25-02-25.19:45:14.961 [http-nio-8080-exec-1] ERROR LoginPort              - 发送模板信息失败! 错误代码: 41001, 错误信息: access_token missing rid: 67bdad4a-628403d8-448dcc53
+25-02-25.19:45:14.961 [http-nio-8080-exec-1] ERROR WeixinPortalController - 接收微信公众号信息请求okOpN7JIwbubh-y9lX9EQWpEwGfk失败 <xml><ToUserName><![CDATA[gh_7e8ebd642fae]]></ToUserName>
+<FromUserName><![CDATA[okOpN7JIwbubh-y9lX9EQWpEwGfk]]></FromUserName>
+<CreateTime>1740483913</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[SCAN]]></Event>
+<EventKey><![CDATA[1740481218304]]></EventKey>
+<Ticket><![CDATA[gQEF8jwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyTVk5VFZuZ0dkZEkxMDAwME0wN0IAAgTBor1nAwQAAAAA]]></Ticket>
+</xml>
+xin.eason.types.exception.AppException: null
+	at xin.eason.infrastructure.adapter.port.LoginPort.sendTemplate(LoginPort.java:87)
+	at xin.eason.infrastructure.adapter.port.LoginPort.sendLoginTemplate(LoginPort.java:50)
+	at xin.eason.domain.auth.service.LoginServiceImpl.saveLoginState(LoginServiceImpl.java:35)
+	at xin.eason.trigger.http.WeixinPortalController.post(WeixinPortalController.java:67)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+25-02-25.19:45:23.180 [http-nio-8080-exec-3] INFO  LoginPort              - 正在获取 Access Token
+25-02-25.19:45:23.181 [http-nio-8080-exec-3] INFO  LoginPort              - 缓存无 Access Token 向微信公众平台获取
+25-02-25.19:45:23.528 [http-nio-8080-exec-3] INFO  LoginPort              - 获取 Access Token 成功: 89_jTsqznbUGdgQvcR2o5IVdwf3AAArNRChDtNAF2HpcNZ_FYAyCOqY-2aqN3BJ6l-4pYPyqCIAmaGQ4gZTDJVz4P5Rx3CFg5UAip8GMqQiNPFB6kk2uX1shcxp4xwJKAcAJAXYO
+25-02-25.19:45:23.528 [http-nio-8080-exec-3] INFO  LoginPort              - 正在获取 Ticket
+25-02-25.19:45:23.989 [http-nio-8080-exec-3] INFO  LoginPort              - 获取 Ticket 成功: gQFd8TwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyaF9LcVVaZ0dkZEkxMDAwMDAwNzAAAgRSrb1nAwQAAAAA
+25-02-25.19:46:12.311 [http-nio-8080-exec-2] INFO  WeixinPortalController - 接收微信公众号信息请求okOpN7JIwbubh-y9lX9EQWpEwGfk开始 <xml><ToUserName><![CDATA[gh_7e8ebd642fae]]></ToUserName>
+<FromUserName><![CDATA[okOpN7JIwbubh-y9lX9EQWpEwGfk]]></FromUserName>
+<CreateTime>1740483971</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[SCAN]]></Event>
+<EventKey><![CDATA[1740483923531]]></EventKey>
+<Ticket><![CDATA[gQFd8TwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyaF9LcVVaZ0dkZEkxMDAwMDAwNzAAAgRSrb1nAwQAAAAA]]></Ticket>
+</xml>
+25-02-25.19:46:12.965 [http-nio-8080-exec-2] INFO  LoginPort              - 发送模板信息成功, msgId: 3873719937298333703
+25-02-25.19:46:13.543 [http-nio-8080-exec-6] INFO  WeixinPortalController - 接收微信公众号信息请求okOpN7JIwbubh-y9lX9EQWpEwGfk开始 <xml><ToUserName><![CDATA[gh_7e8ebd642fae]]></ToUserName>
+<FromUserName><![CDATA[okOpN7JIwbubh-y9lX9EQWpEwGfk]]></FromUserName>
+<CreateTime>1740483972</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>
+<MsgID>3873719937298333703</MsgID>
+<Status><![CDATA[success]]></Status>
+</xml>
+25-02-25.19:46:13.548 [http-nio-8080-exec-6] INFO  WeixinPortalController - 模板信息发送成功! 信息ID: 3873719937298333703
+25-02-25.19:46:38.819 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-02-25.19:46:39.530 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-02-25.19:46:39.531 [SpringApplicationShutdownHook] INFO  GracefulShutdown       - Commencing graceful shutdown. Waiting for active requests to complete
+25-02-25.19:46:39.603 [tomcat-shutdown ] INFO  GracefulShutdown       - Graceful shutdown complete
+25-02-25.19:46:42.454 [main            ] INFO  Application            - Starting Application using Java 17.0.13 with PID 57164 (D:\Code\codes\s-pay-mall-ddd-eason\s-pay-mall-ddd-eason-app\target\classes started by Eason in D:\Code\codes\s-pay-mall-ddd-eason)
+25-02-25.19:46:42.456 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-02-25.19:46:43.239 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port 8080 (http)
+25-02-25.19:46:43.249 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8080"]
+25-02-25.19:46:43.251 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-02-25.19:46:43.251 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/10.1.34]
+25-02-25.19:46:43.303 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-02-25.19:46:43.303 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 820 ms
+25-02-25.19:46:43.908 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-02-25.19:46:44.127 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8080"]
+25-02-25.19:46:44.140 [main            ] INFO  TomcatWebServer        - Tomcat started on port 8080 (http) with context path '/'
+25-02-25.19:46:44.141 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [192.168.226.128:5672]
+25-02-25.19:46:44.176 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#2f9dda71:0/SimpleConnection@2804b13f [delegate=amqp://s-pay-mall@192.168.226.128:5672//s-pay-mall, localPort=64850]
+25-02-25.19:46:44.214 [main            ] INFO  Application            - Started Application in 2.129 seconds (process running for 2.513)
+25-02-25.19:46:44.474 [http-nio-8080-exec-1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-02-25.19:46:44.474 [http-nio-8080-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-02-25.19:46:44.475 [http-nio-8080-exec-1] INFO  DispatcherServlet      - Completed initialization in 1 ms
+25-02-25.19:46:44.503 [http-nio-8080-exec-1] INFO  WeixinPortalController - 接收微信公众号信息请求okOpN7JIwbubh-y9lX9EQWpEwGfk开始 <xml><ToUserName><![CDATA[gh_7e8ebd642fae]]></ToUserName>
+<FromUserName><![CDATA[okOpN7JIwbubh-y9lX9EQWpEwGfk]]></FromUserName>
+<CreateTime>1740484001</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[unsubscribe]]></Event>
+<EventKey><![CDATA[]]></EventKey>
+</xml>
+25-02-25.19:46:46.871 [http-nio-8080-exec-3] INFO  LoginPort              - 正在获取 Access Token
+25-02-25.19:46:46.871 [http-nio-8080-exec-3] INFO  LoginPort              - 缓存无 Access Token 向微信公众平台获取
+25-02-25.19:46:47.258 [http-nio-8080-exec-3] INFO  LoginPort              - 获取 Access Token 成功: 89_k67bIPIPbXKT2lRg8zA5vHAFrZ1BUnBjABpQ_o7cW_MshBciVLLnPgyj2Z0kiG05acbeGwMKDuEpHRrVrkKNYtp9fQU5NgWoaY-XhAqZfmp7I485iqGCMopI_rIXHEbAHAGQN
+25-02-25.19:46:47.259 [http-nio-8080-exec-3] INFO  LoginPort              - 正在获取 Ticket
+25-02-25.19:46:47.693 [http-nio-8080-exec-3] INFO  LoginPort              - 获取 Ticket 成功: gQGq8TwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAydUF6blY1Z0dkZEkxMDAwMHcwN1EAAgSmrb1nAwQAAAAA
+25-02-25.19:47:56.743 [http-nio-8080-exec-10] INFO  WeixinPortalController - 接收微信公众号信息请求okOpN7JIwbubh-y9lX9EQWpEwGfk开始 <xml><ToUserName><![CDATA[gh_7e8ebd642fae]]></ToUserName>
+<FromUserName><![CDATA[okOpN7JIwbubh-y9lX9EQWpEwGfk]]></FromUserName>
+<CreateTime>1740484075</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[subscribe]]></Event>
+<EventKey><![CDATA[qrscene_1740484007261]]></EventKey>
+<Ticket><![CDATA[gQGq8TwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAydUF6blY1Z0dkZEkxMDAwMHcwN1EAAgSmrb1nAwQAAAAA]]></Ticket>
+</xml>
+25-02-25.19:47:57.449 [http-nio-8080-exec-10] INFO  LoginPort              - 发送模板信息成功, msgId: 3873721690232193040
+25-02-25.19:47:57.975 [http-nio-8080-exec-6] INFO  WeixinPortalController - 接收微信公众号信息请求okOpN7JIwbubh-y9lX9EQWpEwGfk开始 <xml><ToUserName><![CDATA[gh_7e8ebd642fae]]></ToUserName>
+<FromUserName><![CDATA[okOpN7JIwbubh-y9lX9EQWpEwGfk]]></FromUserName>
+<CreateTime>1740484076</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>
+<MsgID>3873721690232193040</MsgID>
+<Status><![CDATA[success]]></Status>
+</xml>
+25-02-25.19:47:57.980 [http-nio-8080-exec-6] INFO  WeixinPortalController - 模板信息发送成功! 信息ID: 3873721690232193040
+25-02-25.19:48:06.420 [http-nio-8080-exec-9] INFO  WeixinPortalController - 接收微信公众号信息请求okOpN7JIwbubh-y9lX9EQWpEwGfk开始 <xml><ToUserName><![CDATA[gh_7e8ebd642fae]]></ToUserName>
+<FromUserName><![CDATA[okOpN7JIwbubh-y9lX9EQWpEwGfk]]></FromUserName>
+<CreateTime>1740484085</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[SCAN]]></Event>
+<EventKey><![CDATA[1740484007261]]></EventKey>
+<Ticket><![CDATA[gQGq8TwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAydUF6blY1Z0dkZEkxMDAwMHcwN1EAAgSmrb1nAwQAAAAA]]></Ticket>
+</xml>
+25-02-25.19:48:06.982 [http-nio-8080-exec-9] INFO  LoginPort              - 发送模板信息成功, msgId: 3873721850672709641
+25-02-25.19:48:07.499 [http-nio-8080-exec-1] INFO  WeixinPortalController - 接收微信公众号信息请求okOpN7JIwbubh-y9lX9EQWpEwGfk开始 <xml><ToUserName><![CDATA[gh_7e8ebd642fae]]></ToUserName>
+<FromUserName><![CDATA[okOpN7JIwbubh-y9lX9EQWpEwGfk]]></FromUserName>
+<CreateTime>1740484086</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>
+<MsgID>3873721850672709641</MsgID>
+<Status><![CDATA[success]]></Status>
+</xml>
+25-02-25.19:48:07.502 [http-nio-8080-exec-1] INFO  WeixinPortalController - 模板信息发送成功! 信息ID: 3873721850672709641
+25-02-25.19:48:55.823 [http-nio-8080-exec-3] INFO  LoginServiceImpl       - 正在查询登录状态...
+25-02-25.19:48:55.823 [http-nio-8080-exec-3] INFO  LoginServiceImpl       - 用户: okOpN7JIwbubh-y9lX9EQWpEwGfk, 已登录!
+25-02-25.19:49:05.428 [http-nio-8080-exec-4] INFO  PayController          - 正在创建订单...
+25-02-25.19:49:05.488 [http-nio-8080-exec-4] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-02-25.19:49:05.606 [http-nio-8080-exec-4] INFO  HikariPool             - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1406f7f8
+25-02-25.19:49:05.607 [http-nio-8080-exec-4] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-02-25.19:49:05.756 [http-nio-8080-exec-4] INFO  OrderService           - 创建支付订单成功, payOrder: PayOrderEntity{userId='null', orderId='0574562233390653', payUrl='<form name="punchout_form" method="post" action="https://openapi-sandbox.dl.alipaydev.com/gateway.do?charset=utf-8&method=alipay.trade.page.pay&sign=Q6AWYvA3R4oZXBEacgqfQhhlsxJ9lLuWXG9C8DooTCw%2BCm83ZVXVwo6xrfSJKj%2Bb4ujSureloKZwgcL4SKL%2BlLB27c1Eig3nL5w4atCcZ%2Bijr4EGTBcrME22MlCxuIpPZruCKin4KtLzUxmdZmJeaeBqBjBe%2FAm979i7zh0cJbHAMHYOnr3GP352gPSKeFMnA9oymeRzkys9GvbkY4IRKdJfDPsvV80M7SOiMBovXtysP%2BYNFOTbHE5y6%2FekG0pam%2BQa%2FZh7XM3oN2gbgPvh%2Fd%2FlkIFkKt44KW9Sz87vBxTO7lzn123fUGM%2F3Gi3JPi32reJaOYh%2FZh%2BS4dfM6uL2A%3D%3D&return_url=https%3A%2F%2Fgaga.plus&notify_url=http%3A%2F%2Feason.nat300.top%2Fapi%2Fv1%2Falipay%2Falipay_notify_url&version=1.0&app_id=9021000143682740&sign_type=RSA2&timestamp=2025-02-25+19%3A49%3A05&alipay_sdk=alipay-sdk-java-4.38.157.ALL&format=json">
+<input type="hidden" name="biz_content" value="{&quot;out_trade_no&quot;:&quot;0574562233390653&quot;,&quot;total_amount&quot;:&quot;1.68&quot;,&quot;subject&quot;:&quot;测试商品&quot;,&quot;product_code&quot;:&quot;FAST_INSTANT_TRADE_PAY&quot;}">
+<input type="submit" value="立即支付" style="display:none" >
+</form>
+<script>document.forms[0].submit();</script>', orderStatus=PAY_WAITE}
+25-02-25.19:49:05.769 [http-nio-8080-exec-4] INFO  OrderService           - 支付 URL: 
+<form name="punchout_form" method="post" action="https://openapi-sandbox.dl.alipaydev.com/gateway.do?charset=utf-8&method=alipay.trade.page.pay&sign=Q6AWYvA3R4oZXBEacgqfQhhlsxJ9lLuWXG9C8DooTCw%2BCm83ZVXVwo6xrfSJKj%2Bb4ujSureloKZwgcL4SKL%2BlLB27c1Eig3nL5w4atCcZ%2Bijr4EGTBcrME22MlCxuIpPZruCKin4KtLzUxmdZmJeaeBqBjBe%2FAm979i7zh0cJbHAMHYOnr3GP352gPSKeFMnA9oymeRzkys9GvbkY4IRKdJfDPsvV80M7SOiMBovXtysP%2BYNFOTbHE5y6%2FekG0pam%2BQa%2FZh7XM3oN2gbgPvh%2Fd%2FlkIFkKt44KW9Sz87vBxTO7lzn123fUGM%2F3Gi3JPi32reJaOYh%2FZh%2BS4dfM6uL2A%3D%3D&return_url=https%3A%2F%2Fgaga.plus&notify_url=http%3A%2F%2Feason.nat300.top%2Fapi%2Fv1%2Falipay%2Falipay_notify_url&version=1.0&app_id=9021000143682740&sign_type=RSA2&timestamp=2025-02-25+19%3A49%3A05&alipay_sdk=alipay-sdk-java-4.38.157.ALL&format=json">
+<input type="hidden" name="biz_content" value="{&quot;out_trade_no&quot;:&quot;0574562233390653&quot;,&quot;total_amount&quot;:&quot;1.68&quot;,&quot;subject&quot;:&quot;测试商品&quot;,&quot;product_code&quot;:&quot;FAST_INSTANT_TRADE_PAY&quot;}">
+<input type="submit" value="立即支付" style="display:none" >
+</form>
+<script>document.forms[0].submit();</script>
+25-02-25.19:49:05.769 [http-nio-8080-exec-4] INFO  AbstractOrderService   - 创建订单-完成，生成支付单。userId: okOpN7JIwbubh-y9lX9EQWpEwGfk orderId: 0574562233390653 payUrl: <form name="punchout_form" method="post" action="https://openapi-sandbox.dl.alipaydev.com/gateway.do?charset=utf-8&method=alipay.trade.page.pay&sign=Q6AWYvA3R4oZXBEacgqfQhhlsxJ9lLuWXG9C8DooTCw%2BCm83ZVXVwo6xrfSJKj%2Bb4ujSureloKZwgcL4SKL%2BlLB27c1Eig3nL5w4atCcZ%2Bijr4EGTBcrME22MlCxuIpPZruCKin4KtLzUxmdZmJeaeBqBjBe%2FAm979i7zh0cJbHAMHYOnr3GP352gPSKeFMnA9oymeRzkys9GvbkY4IRKdJfDPsvV80M7SOiMBovXtysP%2BYNFOTbHE5y6%2FekG0pam%2BQa%2FZh7XM3oN2gbgPvh%2Fd%2FlkIFkKt44KW9Sz87vBxTO7lzn123fUGM%2F3Gi3JPi32reJaOYh%2FZh%2BS4dfM6uL2A%3D%3D&return_url=https%3A%2F%2Fgaga.plus&notify_url=http%3A%2F%2Feason.nat300.top%2Fapi%2Fv1%2Falipay%2Falipay_notify_url&version=1.0&app_id=9021000143682740&sign_type=RSA2&timestamp=2025-02-25+19%3A49%3A05&alipay_sdk=alipay-sdk-java-4.38.157.ALL&format=json">
+<input type="hidden" name="biz_content" value="{&quot;out_trade_no&quot;:&quot;0574562233390653&quot;,&quot;total_amount&quot;:&quot;1.68&quot;,&quot;subject&quot;:&quot;测试商品&quot;,&quot;product_code&quot;:&quot;FAST_INSTANT_TRADE_PAY&quot;}">
+<input type="submit" value="立即支付" style="display:none" >
+</form>
+<script>document.forms[0].submit();</script>
+25-02-25.19:49:05.769 [http-nio-8080-exec-4] INFO  PayController          - 创建订单成功!
+25-02-25.19:50:51.144 [http-nio-8080-exec-7] INFO  LoginPort              - 正在获取 Access Token
+25-02-25.19:50:51.145 [http-nio-8080-exec-7] INFO  LoginPort              - 获取 Access Token 成功: 89_k67bIPIPbXKT2lRg8zA5vHAFrZ1BUnBjABpQ_o7cW_MshBciVLLnPgyj2Z0kiG05acbeGwMKDuEpHRrVrkKNYtp9fQU5NgWoaY-XhAqZfmp7I485iqGCMopI_rIXHEbAHAGQN
+25-02-25.19:50:51.146 [http-nio-8080-exec-7] INFO  LoginPort              - 正在获取 Ticket
+25-02-25.19:50:51.647 [http-nio-8080-exec-7] INFO  LoginPort              - 获取 Ticket 成功: gQHv8TwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyYkdxVFZEZ0dkZEkxMDAwME0wN2IAAgSarr1nAwQAAAAA
+25-02-25.19:50:54.654 [http-nio-8080-exec-6] INFO  LoginServiceImpl       - 正在查询登录状态...
+25-02-25.19:50:54.655 [http-nio-8080-exec-6] INFO  LoginServiceImpl       - 用户: null, 未登录!
+25-02-25.19:50:57.654 [http-nio-8080-exec-8] INFO  LoginServiceImpl       - 正在查询登录状态...
+25-02-25.19:50:57.654 [http-nio-8080-exec-8] INFO  LoginServiceImpl       - 用户: null, 未登录!
+25-02-25.19:50:58.410 [http-nio-8080-exec-9] INFO  WeixinPortalController - 接收微信公众号信息请求okOpN7JIwbubh-y9lX9EQWpEwGfk开始 <xml><ToUserName><![CDATA[gh_7e8ebd642fae]]></ToUserName>
+<FromUserName><![CDATA[okOpN7JIwbubh-y9lX9EQWpEwGfk]]></FromUserName>
+<CreateTime>1740484257</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[SCAN]]></Event>
+<EventKey><![CDATA[1740484251146]]></EventKey>
+<Ticket><![CDATA[gQHv8TwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyYkdxVFZEZ0dkZEkxMDAwME0wN2IAAgSarr1nAwQAAAAA]]></Ticket>
+</xml>
+25-02-25.19:50:59.034 [http-nio-8080-exec-9] INFO  LoginPort              - 发送模板信息成功, msgId: 3873724737226276869
+25-02-25.19:50:59.508 [http-nio-8080-exec-1] INFO  WeixinPortalController - 接收微信公众号信息请求okOpN7JIwbubh-y9lX9EQWpEwGfk开始 <xml><ToUserName><![CDATA[gh_7e8ebd642fae]]></ToUserName>
+<FromUserName><![CDATA[okOpN7JIwbubh-y9lX9EQWpEwGfk]]></FromUserName>
+<CreateTime>1740484258</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>
+<MsgID>3873724737226276869</MsgID>
+<Status><![CDATA[success]]></Status>
+</xml>
+25-02-25.19:50:59.511 [http-nio-8080-exec-1] INFO  WeixinPortalController - 模板信息发送成功! 信息ID: 3873724737226276869
+25-02-25.19:51:00.659 [http-nio-8080-exec-3] INFO  LoginServiceImpl       - 正在查询登录状态...
+25-02-25.19:51:00.659 [http-nio-8080-exec-3] INFO  LoginServiceImpl       - 用户: okOpN7JIwbubh-y9lX9EQWpEwGfk, 已登录!
+25-02-25.19:51:03.568 [http-nio-8080-exec-10] INFO  PayController          - 正在创建订单...
+25-02-25.19:51:03.594 [http-nio-8080-exec-10] INFO  OrderService           - 创建支付订单成功, payOrder: PayOrderEntity{userId='null', orderId='4144391368373668', payUrl='<form name="punchout_form" method="post" action="https://openapi-sandbox.dl.alipaydev.com/gateway.do?charset=utf-8&method=alipay.trade.page.pay&sign=h4ZrfGuB0f9LdvKIm0%2Bli7%2Bqy2%2BRMqNiwHrM3a8rIVisdCvdou7peNXF3JHGY6lN4YJCdaNhZAMCBagLHXIBQGDiAMM02Z1X8yt1epH9yiDGeXFotc2iiyo97ej4iC5sPUmoLi2NgUGKlx6kUUKvY2yX4E95tktJsAO31WQKNTyiwtwQp4MQFkzyZmQnWJ8nE%2F0Hdw5pG1usqcVx3KJQyFYMVxGntMUebcpKSKzC%2BE56kefvG6%2BcmPqSEO1ZgXtz8Ce2Jwdpqm6uNAjbb56Acyqzo39fTftu8KYD19wg9h%2FF3QTTOBtw6LY0K5tY8%2BFYotQO2DNRrSL6cOJvL%2BnEgg%3D%3D&return_url=https%3A%2F%2Fgaga.plus&notify_url=http%3A%2F%2Feason.nat300.top%2Fapi%2Fv1%2Falipay%2Falipay_notify_url&version=1.0&app_id=9021000143682740&sign_type=RSA2&timestamp=2025-02-25+19%3A51%3A03&alipay_sdk=alipay-sdk-java-4.38.157.ALL&format=json">
+<input type="hidden" name="biz_content" value="{&quot;out_trade_no&quot;:&quot;4144391368373668&quot;,&quot;total_amount&quot;:&quot;1.68&quot;,&quot;subject&quot;:&quot;测试商品&quot;,&quot;product_code&quot;:&quot;FAST_INSTANT_TRADE_PAY&quot;}">
+<input type="submit" value="立即支付" style="display:none" >
+</form>
+<script>document.forms[0].submit();</script>', orderStatus=PAY_WAITE}
+25-02-25.19:51:03.600 [http-nio-8080-exec-10] INFO  OrderService           - 支付 URL: 
+<form name="punchout_form" method="post" action="https://openapi-sandbox.dl.alipaydev.com/gateway.do?charset=utf-8&method=alipay.trade.page.pay&sign=h4ZrfGuB0f9LdvKIm0%2Bli7%2Bqy2%2BRMqNiwHrM3a8rIVisdCvdou7peNXF3JHGY6lN4YJCdaNhZAMCBagLHXIBQGDiAMM02Z1X8yt1epH9yiDGeXFotc2iiyo97ej4iC5sPUmoLi2NgUGKlx6kUUKvY2yX4E95tktJsAO31WQKNTyiwtwQp4MQFkzyZmQnWJ8nE%2F0Hdw5pG1usqcVx3KJQyFYMVxGntMUebcpKSKzC%2BE56kefvG6%2BcmPqSEO1ZgXtz8Ce2Jwdpqm6uNAjbb56Acyqzo39fTftu8KYD19wg9h%2FF3QTTOBtw6LY0K5tY8%2BFYotQO2DNRrSL6cOJvL%2BnEgg%3D%3D&return_url=https%3A%2F%2Fgaga.plus&notify_url=http%3A%2F%2Feason.nat300.top%2Fapi%2Fv1%2Falipay%2Falipay_notify_url&version=1.0&app_id=9021000143682740&sign_type=RSA2&timestamp=2025-02-25+19%3A51%3A03&alipay_sdk=alipay-sdk-java-4.38.157.ALL&format=json">
+<input type="hidden" name="biz_content" value="{&quot;out_trade_no&quot;:&quot;4144391368373668&quot;,&quot;total_amount&quot;:&quot;1.68&quot;,&quot;subject&quot;:&quot;测试商品&quot;,&quot;product_code&quot;:&quot;FAST_INSTANT_TRADE_PAY&quot;}">
+<input type="submit" value="立即支付" style="display:none" >
+</form>
+<script>document.forms[0].submit();</script>
+25-02-25.19:51:03.600 [http-nio-8080-exec-10] INFO  AbstractOrderService   - 创建订单-完成，生成支付单。userId: okOpN7JIwbubh-y9lX9EQWpEwGfk orderId: 4144391368373668 payUrl: <form name="punchout_form" method="post" action="https://openapi-sandbox.dl.alipaydev.com/gateway.do?charset=utf-8&method=alipay.trade.page.pay&sign=h4ZrfGuB0f9LdvKIm0%2Bli7%2Bqy2%2BRMqNiwHrM3a8rIVisdCvdou7peNXF3JHGY6lN4YJCdaNhZAMCBagLHXIBQGDiAMM02Z1X8yt1epH9yiDGeXFotc2iiyo97ej4iC5sPUmoLi2NgUGKlx6kUUKvY2yX4E95tktJsAO31WQKNTyiwtwQp4MQFkzyZmQnWJ8nE%2F0Hdw5pG1usqcVx3KJQyFYMVxGntMUebcpKSKzC%2BE56kefvG6%2BcmPqSEO1ZgXtz8Ce2Jwdpqm6uNAjbb56Acyqzo39fTftu8KYD19wg9h%2FF3QTTOBtw6LY0K5tY8%2BFYotQO2DNRrSL6cOJvL%2BnEgg%3D%3D&return_url=https%3A%2F%2Fgaga.plus&notify_url=http%3A%2F%2Feason.nat300.top%2Fapi%2Fv1%2Falipay%2Falipay_notify_url&version=1.0&app_id=9021000143682740&sign_type=RSA2&timestamp=2025-02-25+19%3A51%3A03&alipay_sdk=alipay-sdk-java-4.38.157.ALL&format=json">
+<input type="hidden" name="biz_content" value="{&quot;out_trade_no&quot;:&quot;4144391368373668&quot;,&quot;total_amount&quot;:&quot;1.68&quot;,&quot;subject&quot;:&quot;测试商品&quot;,&quot;product_code&quot;:&quot;FAST_INSTANT_TRADE_PAY&quot;}">
+<input type="submit" value="立即支付" style="display:none" >
+</form>
+<script>document.forms[0].submit();</script>
+25-02-25.19:51:03.600 [http-nio-8080-exec-10] INFO  PayController          - 创建订单成功!
+25-02-25.19:52:04.388 [http-nio-8080-exec-6] INFO  PayController          - 支付回调，消息接收 TRADE_SUCCESS
+25-02-25.19:52:04.389 [http-nio-8080-exec-6] INFO  PayController          - 支付回调，交易名称: 测试商品
+25-02-25.19:52:04.389 [http-nio-8080-exec-6] INFO  PayController          - 支付回调，交易状态: TRADE_SUCCESS
+25-02-25.19:52:04.389 [http-nio-8080-exec-6] INFO  PayController          - 支付回调，支付宝交易凭证号: 2025022522001492730505718189
+25-02-25.19:52:04.389 [http-nio-8080-exec-6] INFO  PayController          - 支付回调，商户订单号: 4144391368373668
+25-02-25.19:52:04.389 [http-nio-8080-exec-6] INFO  PayController          - 支付回调，交易金额: 1.68
+25-02-25.19:52:04.389 [http-nio-8080-exec-6] INFO  PayController          - 支付回调，买家在支付宝唯一id: 2088722057192739
+25-02-25.19:52:04.389 [http-nio-8080-exec-6] INFO  PayController          - 支付回调，买家付款时间: 2025-02-25 19:52:01
+25-02-25.19:52:04.389 [http-nio-8080-exec-6] INFO  PayController          - 支付回调，买家付款金额: 1.68
+25-02-25.19:52:04.389 [http-nio-8080-exec-6] INFO  PayController          - 支付回调，支付回调，更新订单 4144391368373668
+25-02-25.19:52:04.415 [AMQP Connection 192.168.226.128:5672] INFO  AbstractPayEvent       - 发送成功! 返回: Confirm [ack=true]
+25-02-25.19:52:04.418 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] INFO  OrderSuccessListener   - 已收到支付成功回调 MQ 消息: 4144391368373668
+25-02-25.19:52:05.038 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] INFO  PayPort                - 发送模板信息成功, msgId: 3873725844371537924
+25-02-25.19:52:05.547 [http-nio-8080-exec-8] INFO  WeixinPortalController - 接收微信公众号信息请求okOpN7JIwbubh-y9lX9EQWpEwGfk开始 <xml><ToUserName><![CDATA[gh_7e8ebd642fae]]></ToUserName>
+<FromUserName><![CDATA[okOpN7JIwbubh-y9lX9EQWpEwGfk]]></FromUserName>
+<CreateTime>1740484324</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>
+<MsgID>3873725844371537924</MsgID>
+<Status><![CDATA[success]]></Status>
+</xml>
+25-02-25.19:52:05.551 [http-nio-8080-exec-8] INFO  WeixinPortalController - 模板信息发送成功! 信息ID: 3873725844371537924
+25-02-25.22:05:30.277 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-02-25.22:25:07.232 [main            ] INFO  Application            - Starting Application using Java 17.0.13 with PID 38760 (D:\Code\codes\s-pay-mall-ddd-eason\s-pay-mall-ddd-eason-app\target\classes started by Eason in D:\Code\codes\s-pay-mall-ddd-eason)
+25-02-25.22:25:07.234 [main            ] INFO  Application            - The following 1 profile is active: "prod"
+25-02-25.22:25:07.985 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port 8080 (http)
+25-02-25.22:25:07.994 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8080"]
+25-02-25.22:25:07.995 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-02-25.22:25:07.995 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/10.1.34]
+25-02-25.22:25:08.049 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-02-25.22:25:08.050 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 793 ms
+25-02-25.22:25:08.675 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-02-25.22:25:08.879 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8080"]
+25-02-25.22:25:08.891 [main            ] INFO  TomcatWebServer        - Tomcat started on port 8080 (http) with context path '/'
+25-02-25.22:25:08.893 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [mq:5672]
+25-02-25.22:25:11.605 [main            ] INFO  SimpleMessageListenerContainer - Broker not available; cannot force queue declarations during start: java.net.UnknownHostException: 不知道这样的主机。 (mq)
+25-02-25.22:25:11.610 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] INFO  CachingConnectionFactory - Attempting to connect to: [mq:5672]
+25-02-25.22:25:11.610 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] ERROR SimpleMessageListenerContainer - Failed to check/redeclare auto-delete queue(s).
+org.springframework.amqp.AmqpIOException: java.net.UnknownHostException: mq
+	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:70)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:633)
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:726)
+	at org.springframework.amqp.rabbit.connection.ConnectionFactoryUtils.createConnection(ConnectionFactoryUtils.java:257)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:2262)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2235)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2215)
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueInfo(RabbitAdmin.java:468)
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueProperties(RabbitAdmin.java:452)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.attemptDeclarations(AbstractMessageListenerContainer.java:1960)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.redeclareElementsIfNecessary(AbstractMessageListenerContainer.java:1924)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1483)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1324)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.net.UnknownHostException: mq
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:801)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1532)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1384)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1305)
+	at com.rabbitmq.client.DnsRecordIpAddressResolver.resolveIpAddresses(DnsRecordIpAddressResolver.java:83)
+	at com.rabbitmq.client.DnsRecordIpAddressResolver.getAddresses(DnsRecordIpAddressResolver.java:73)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1245)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1198)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connectAddresses(AbstractConnectionFactory.java:679)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connect(AbstractConnectionFactory.java:648)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:594)
+	... 12 common frames omitted
+25-02-25.22:25:11.613 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] INFO  CachingConnectionFactory - Attempting to connect to: [mq:5672]
+25-02-25.22:25:11.618 [main            ] INFO  Application            - Started Application in 4.759 seconds (process running for 5.164)
+25-02-25.22:25:16.710 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] INFO  SimpleMessageListenerContainer - Restarting Consumer@604f376a: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+25-02-25.22:25:16.710 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  CachingConnectionFactory - Attempting to connect to: [mq:5672]
+25-02-25.22:25:16.710 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] ERROR SimpleMessageListenerContainer - Failed to check/redeclare auto-delete queue(s).
+25-02-25.22:25:16.711 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  CachingConnectionFactory - Attempting to connect to: [mq:5672]
+25-02-25.22:25:21.831 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Restarting Consumer@42e6dda8: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+25-02-25.22:25:21.832 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] INFO  CachingConnectionFactory - Attempting to connect to: [mq:5672]
+25-02-25.22:25:24.541 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] ERROR SimpleMessageListenerContainer - Failed to check/redeclare auto-delete queue(s).
+25-02-25.22:25:24.541 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] INFO  CachingConnectionFactory - Attempting to connect to: [mq:5672]
+25-02-25.22:25:29.625 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] INFO  SimpleMessageListenerContainer - Restarting Consumer@5a556d57: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+25-02-25.22:25:29.626 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-4] INFO  CachingConnectionFactory - Attempting to connect to: [mq:5672]
+25-02-25.22:25:29.626 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-4] ERROR SimpleMessageListenerContainer - Failed to check/redeclare auto-delete queue(s).
+25-02-25.22:25:29.626 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-4] INFO  CachingConnectionFactory - Attempting to connect to: [mq:5672]
+25-02-25.22:25:34.740 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-4] INFO  SimpleMessageListenerContainer - Restarting Consumer@7fcc6e61: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+25-02-25.22:25:34.740 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-5] INFO  CachingConnectionFactory - Attempting to connect to: [mq:5672]
+25-02-25.22:25:37.446 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-5] ERROR SimpleMessageListenerContainer - Failed to check/redeclare auto-delete queue(s).
+25-02-25.22:25:37.446 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-5] INFO  CachingConnectionFactory - Attempting to connect to: [mq:5672]
+25-02-25.22:25:42.579 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-5] INFO  SimpleMessageListenerContainer - Restarting Consumer@3a125f57: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+25-02-25.22:25:42.579 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-6] INFO  CachingConnectionFactory - Attempting to connect to: [mq:5672]
+25-02-25.22:25:42.580 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-6] ERROR SimpleMessageListenerContainer - Failed to check/redeclare auto-delete queue(s).
+25-02-25.22:25:42.580 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-6] INFO  CachingConnectionFactory - Attempting to connect to: [mq:5672]
+25-02-25.22:25:47.669 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-6] INFO  SimpleMessageListenerContainer - Restarting Consumer@de99e03: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+25-02-25.22:25:47.669 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-7] INFO  CachingConnectionFactory - Attempting to connect to: [mq:5672]
+25-02-25.22:25:50.384 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-7] ERROR SimpleMessageListenerContainer - Failed to check/redeclare auto-delete queue(s).
+25-02-25.22:25:50.384 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-7] INFO  CachingConnectionFactory - Attempting to connect to: [mq:5672]
+25-02-25.22:25:51.900 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-8] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-02-25.22:25:51.900 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-8] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-02-25.22:25:51.901 [SpringApplicationShutdownHook] INFO  GracefulShutdown       - Commencing graceful shutdown. Waiting for active requests to complete
+25-02-25.22:25:51.979 [tomcat-shutdown ] INFO  GracefulShutdown       - Graceful shutdown complete
+25-02-25.22:25:54.098 [main            ] INFO  Application            - Starting Application using Java 17.0.13 with PID 7340 (D:\Code\codes\s-pay-mall-ddd-eason\s-pay-mall-ddd-eason-app\target\classes started by Eason in D:\Code\codes\s-pay-mall-ddd-eason)
+25-02-25.22:25:54.100 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-02-25.22:25:54.825 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port 8080 (http)
+25-02-25.22:25:54.838 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8080"]
+25-02-25.22:25:54.838 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-02-25.22:25:54.838 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/10.1.34]
+25-02-25.22:25:54.887 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-02-25.22:25:54.888 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 760 ms
+25-02-25.22:25:55.452 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-02-25.22:25:55.653 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8080"]
+25-02-25.22:25:55.665 [main            ] INFO  TomcatWebServer        - Tomcat started on port 8080 (http) with context path '/'
+25-02-25.22:25:55.667 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [192.168.226.128:5672]
+25-02-25.22:25:55.700 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#616a06e3:0/SimpleConnection@246de37e [delegate=amqp://s-pay-mall@192.168.226.128:5672//s-pay-mall, localPort=56184]
+25-02-25.22:25:55.732 [main            ] INFO  Application            - Started Application in 2.023 seconds (process running for 2.488)
+25-02-25.23:57:20.951 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-02-25.23:57:21.911 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-02-25.23:57:21.912 [SpringApplicationShutdownHook] INFO  GracefulShutdown       - Commencing graceful shutdown. Waiting for active requests to complete
+25-02-25.23:57:21.986 [tomcat-shutdown ] INFO  GracefulShutdown       - Graceful shutdown complete

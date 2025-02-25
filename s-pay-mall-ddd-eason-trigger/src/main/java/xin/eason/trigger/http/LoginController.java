@@ -12,7 +12,7 @@ import xin.eason.types.common.Result;
 import java.util.Map;
 
 @Slf4j
-@CrossOrigin
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/api/v1/login")
 @RequiredArgsConstructor

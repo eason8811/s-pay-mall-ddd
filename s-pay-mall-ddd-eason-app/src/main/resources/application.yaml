@@ -2,7 +2,7 @@ spring:
   application:
     name: common
   profiles:
-    active: dev
+    active: prod
   datasource:
     username: ${spring.datasource.username}
     password: ${spring.datasource.password}
@@ -10,11 +10,11 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   rabbitmq:
-    host: 192.168.226.128
-    port: 5672
-    virtual-host: /s-pay-mall
-    username: s-pay-mall
-    password: 123456
+    host: ${spring.rabbitmq.host}
+    port: ${spring.rabbitmq.port}
+    virtual-host: ${spring.rabbitmq.virtual-host}
+    username: ${spring.rabbitmq.username}
+    password: ${spring.rabbitmq.password}
     publisher-confirm-type: correlated #开启publisher confirm机制，并设置confirm类型
     publisher-returns: true #开启publisherreturn机制
     listener:

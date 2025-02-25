@@ -21,13 +21,15 @@ public class LoginServiceImpl implements ILoginService {
 
     /**
      * 储存用户的登录状态以及登录信息
+     *
      * @param ticket 生成二维码的 Ticket
      * @param openid 用户的 OpenId
      */
     @Override
     public void saveLoginState(String ticket, String openid) {
         // 使用 Cache 储存用户信息
-        loginCache.put(ticket, openid);
+        if (loginCache.getIfPresent(ticket) == null)
+            loginCache.put(ticket, openid);
 
         //发送登陆成功模板信息
         loginPort.sendLoginTemplate(openid);
@@ -49,6 +51,7 @@ public class LoginServiceImpl implements ILoginService {
 
     /**
      * 检查登录状态
+     *
      * @param ticket 用于生成二维码的 <b>Ticket</b>
      * @return 用户信息的 Map
      */
