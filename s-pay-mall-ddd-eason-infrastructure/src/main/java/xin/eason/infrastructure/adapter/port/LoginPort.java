@@ -25,8 +25,6 @@ public class LoginPort implements ILoginPort {
 
     private final String LOCATION_TEMP_ID = "pKIT3l2hfdpyUK4x1N8ugHddvty-N4l5VifX0j3sEFA";
 
-    private final String SEND_SUCCESS_TEMP_ID = "BNGoy95cPSy1mjsFleykVN811OtXBO2rrsMUPuFMpKY";
-
     @Value("${wechat.grant-type}")
     private String grant_type;
 
@@ -59,16 +57,6 @@ public class LoginPort implements ILoginPort {
      */
     @Override
     public void sendLocationTemplate(String openid) {
-
-    }
-
-    /**
-     * 发送用户购买的商品发货成功的信息
-     *
-     * @param openid 用户的 OpenId
-     */
-    @Override
-    public void sendSendSuccessTemplate(String openid) {
 
     }
 

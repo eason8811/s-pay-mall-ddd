@@ -1,20 +1,15 @@
-package xin.eason.domain.auth.adapter.port;
+package xin.eason.domain.order.adapter.port;
+
+import xin.eason.domain.order.model.aggregate.OrderAggregate;
 
 import java.util.Map;
 
-public interface ILoginPort {
-
+public interface IPayPort {
     /**
-     * 发送登陆成功的模板信息
-     * @param openid 用户的 OpenId
+     * 发送用户购买的商品发货成功的信息
+     * @param orderAggregate 订单聚合
      */
-    void sendLoginTemplate(String openid);
-
-    /**
-     * 发送用户位置信息
-     * @param openid 用户的 OpenId
-     */
-    void sendLocationTemplate(String openid);
+    void sendSendSuccessTemplate(OrderAggregate orderAggregate);
 
     /**
      * 向指定用户发送模板信息
@@ -27,11 +22,4 @@ public interface ILoginPort {
      * @return 如果发送成功则返回模板信息的 <b>ID</b>
      */
     Long sendTemplate(String templateId, String openid, String turnToUrl, String accessToken, Map<String, String> dataMap);
-
-    /**
-     * 获取 Ticket
-     * @return Ticket 字符串
-     */
-    String getTicket();
-
 }
