@@ -2,6 +2,7 @@ package xin.eason.domain.order.model.entity;
 
 import lombok.Builder;
 import lombok.Data;
+import xin.eason.domain.order.model.valobj.MarketType;
 import xin.eason.domain.order.model.valobj.OrderStatusVO;
 
 import java.math.BigDecimal;
@@ -18,5 +19,8 @@ public class OrderItemEntity {
     private String productName;
     private LocalDateTime orderTime;
     private BigDecimal totalAmount;
+    private BigDecimal deductionAmount;
+    private BigDecimal payAmount;
+    private MarketType marketType;
     private OrderStatusVO orderStatus;
 }

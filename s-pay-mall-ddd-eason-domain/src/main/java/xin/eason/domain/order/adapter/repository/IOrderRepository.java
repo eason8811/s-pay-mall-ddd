@@ -4,6 +4,9 @@ import xin.eason.domain.order.model.aggregate.OrderAggregate;
 import xin.eason.domain.order.model.entity.PayOrderEntity;
 import xin.eason.domain.order.model.entity.ShoppingCartEntity;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
 public interface IOrderRepository {
 
     /**
@@ -27,9 +30,10 @@ public interface IOrderRepository {
 
     /**
      * 将指定订单编号的订单付款状态修改为支付成功
-     * @param tradeNo 订单编号
+     * @param orderIdList 订单编号列表
+     * @param payTime 支付时间
      */
-    void changeOrderStatusSuccess(String tradeNo);
+    void changeOrderStatusSuccess(List<String> orderIdList, LocalDateTime payTime);
 
     /**
      * 根据订单 ID 查询订单信息

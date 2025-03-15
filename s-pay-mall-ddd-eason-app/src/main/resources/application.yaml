@@ -1,8 +1,11 @@
+server:
+  port: 8081
+
 spring:
   application:
     name: common
   profiles:
-    active: prod
+    active: dev
   datasource:
     username: ${spring.datasource.username}
     password: ${spring.datasource.password}
@@ -51,7 +54,7 @@ wechat:
 alipay:
   enabled: true
   app-id: 9021000143682740
-  merchant-private-key: MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCHx8CXZpwHqwZy/LnN6P1OEKBAfa5Zh4IbVQ7KyWRRbkOgtBrIP6g9yk0mQnabr1eMkxFPjWZl7vyCiGQZTqaBu/xYdy4QJq5iY9Is9o7vezApMvBrBt+7NVfAdsGZFrbwmedLLkdJaJEW3W+7ab4Hf7sux5YEYbMc/pt2zYKjKXENh8E0RbwDSwQouNwkYeo2nJOdfAwArzgMp4uYykvfLFD2u7t6XQWCyb1rhxhqCXoM5HVxMjZYf1sEP/z2J7rYm89NyE6LO46wGELyBxF/JzSNbJAhN4HLD2LSjWl9zCe63zPPZN7AsnrGSUVLg/DuE3UVZfvYar4vHkJZyQpHAgMBAAECggEAYpZOJ2AQkJzEXP9VZcXzDhiSUuEuk8EJXhEfYWxjE6EtJ2U+QQG/hcX6yHnfpuDkf6RVIF75569j1t9zVtC9o1s8OXunjYCYg8YY2B7Z39ahPHjJCdz+2+46XfucTCyq/f2xa+wZRJrRJjn4I6r+mHFNFwVBzsKli7ruZI+JeC/TGKVRea3AwFJW2+asUxJnjcM5zcWzDrETv9i9WD/Zk4nDegQuJU7UmKnlxv0Vn0Ru1s8OxcV9gPU4s+EkibL0xgPiUqfnCqqC4TZ0Sn3WNTlDodoo5ehoDt218TcLWiFwNK4mfpw609vlo6TdqE4k6SLD0zwS68HTbGBkgPwzSQKBgQC/cE91Rqf4DyquE4Bif9X49Uud7l7E7OS43fLXzg/j6QbvNAFAWhP1OqFUZNPNU4rT1DZZsOJF9cx4dkrP/6OkWau7vp/5ei1cZFoYKRSdNMvDO7HMacrY3fy6UbDJo+R5xKCrbDxXmyYm6WMzbtxfAq4wpQOnIuhbqL3JMgq86wKBgQC1kjilSDYvWIDE38j8xcNmXj1POIjSWqMx1Nf6GIZqjBB7KPwrAx8TDMGdevRHUJCCg5m0dCX65/bkuNjAbOb3h5RliM7guXER2fvzs3QznnaS8VLlrHmOOBMW8lbIE0r+vVm4uJ5gYQd6+LGTtYBJAqTFcT1zgnH28Am8EVfhFQKBgBARoEnKxXyX4VA9SNB7xH0iMdeu03uaGtS9pI2iuUi7HZ7kcZpyNSynYDVSRUj90zBWpr0+kK+ooyIVY9AzuAuqjzSyGoF5VOdlcP6ILDfJ37SihRkQZDtx3q3Q/5LdU+c4rvfUnPgJiNlJS89cZdj/w5lHsJfN4U0YS93genBDAoGBAIZIAYSbBxe0yGbRaf8m8v++KnFwSh/n0FGGK8RWZvJda8Lp6LSWtmCMSpSA3i/vsTAUy5PdYklRTBKTchm9cIMXzfPZXcZs3uZo5CCzUvjp9J9vwfMBv1QivFt4Fh4ZxpjmyHgIcXitya50RkALNzjHr7wlp2DJ1CbgFxLzcJ6RAoGAfjSdRZmOYNpkmh/ZJ573GgARku6iw1g8PtcmIriaroYcqTwwdOtNl3eXxsDkG9GK3CQcmgFtUV2Vdk5X2OvHEkWVampYr4MVy8QqpGQiyashKQCpK7XcSy66xDye3Eqc74ftADeyf/OapHpYWRm16T3XsEAlrZOP052guElgrV4=
+  merchant-private-key: MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCFZEQknIh614crOOzzRDKx970+ai+O0FdgYrc1sspqrUh8dKtXHNzvTKepavLOwfUG22LBjR/ZhiniDpl2MQSlbF+xWBYOZRjTywIbLiAW6I2mo7PxwX0Fv9NvOdzz0jE9osUqY+7OVKVd9AmS+Hrxa75Xbvec06lrAPHwwh5SBZ6ZUUvPXyGpLb+OqX4f8h0FK6yatBTrga7VHyEBZJTAQLgEA1AVZw9QfBqRjYo/6hdFGBr4PJb1nn5igVrAaYqImCjtSyRjYrYjwrhXLHsI0S4o4/ciS/MGkFuDg+CKnTiEjszOhzmstAVHeggxJrqDtf0/5Jx/OfTsjUN19/2/AgMBAAECggEAO+WOA7KWRjLJa0sgewvAh9FqlMAxortCwPESu3YRFl3BEsGAvpkjTADruFNhvB2z3OReL/MivhZUcEGF/2B7aZyES6n2HXif8VpTE8led2rtUEpp3sC3VwGP+33MDV/w5HBWgHZnIRc5Ojr+oZQaAJYU3kXhwfX5OScvfKBt5P4dUMpuHVlH1+arRnzdj8cA5Mwa+NPd0iy6SfH5P2DzXnaVBhGByXSBFgL7x+YupF4SeueS6fMRgElOBmzbqFjr7aS8MfmxqIYNhmgQZFOHnNeLM2bMcJGR0qv7N2ytEfE3d8sPcYXmo/YNz3d2V0fmglCMTJpv0utJMQInasM8wQKBgQDwFHWOf/JQn8NcMHCQjo40BBPdMpkw+aEsP+uMSGos/urbu63NiL8hzqRIUuPwCq2Vq2/51wgbGEUHWQSuV2O0tQ60PWT00C/Bfvmhs+9GpwUOfV5jN0t7CcqAK6rpdCDgNcmiuBywwZvPM+ZRem0KdhK2/Zj6h18HFQCY00KJqQKBgQCOPLEoYcSrB0VoBVC6g/Qr/WVW5bJfYtcKlIm+rP0qRj3+jT6Ug3wG4xCPKpFTr/5DyulA0PstpaZzPx5bJjU54Svn8f8jaWA1XJpmzlpdZ3oAvq1r6DxDehhg3RXa8wIFnynfemkSa0eonUHAZfFHBGzCiwgfibsonHhgViH9JwKBgQCmazg2CGD7HFP6sqVEv1y5l94BJhLkzRW5K7Hm80eOW0KIAKfw4orDL4/XhoX0niJHrqgXQsSeq4smFcHV7EP0PtGrhSdXQHzqH0+BlM4XZq1tpt/n3KuY5WeWwy5dV592bDKSdheFOx/7WJmd/0RYzRIaAN6rQ21O5nMcfM0RyQKBgEeIMFQtrxmQI5Cns6zJdb+1xQRJqkYcUCdrAkcZeoyLHNxqrkFEStiv0wEdGE8tIEN5xYqqTtfrCeXFpX+TnIsKOemBI53sfcz4UFJJjtqQkqPTQSYWelA5FA+KwFYHhknLfOR+DF+OAlDDHXEkE45ypDvGbgRmYPCQmF1ik99bAoGBAMY/rQwz8/AObRQ5Fa9zUn45IkS1Yvd4EhJY8QdCCy5GJHPM2wK51JWRwmkOKNZsS5Cv804fNmjvwKdRcTI3qK20ukZNk4YTrVWv0sPZR5y4GlztcNwubChw7k/y/PivWWm4SIvL1LlTECJqvLncyFieuxIBcqD3Agt8qL3CSA6P
   alipay-public-key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp9HohP+UIcNpz4ZNA3pxiLUZMgH621iQx56NJpGEvCkW1pL+NYoRSDNlqq18WQqETYEyKZ9QgdcQB4BTmVrCqibPnuI9czsLdFPbuT9mf0nC8KP5hkLdL5AI4LF6PI4oWGv4ryiTUeeVvfa6WhNhJ1v+mGCqXhObufHRCZNDCEcjKLn9XlaDskW74bJ6ZcbkXCXTdeqvBLZG8LY95xZvnMuvPvd/ek/2c4L0TY8dFGB5o9v2WD4kVo4PZLVggTcaP0OYmcVyLjKyoAx3luo9Wt820xFq5NTf+R00jxVMpBuwBSPT7lMVvaMKNbMSR/A0asGLSXKLAQscHreP+YAs8wIDAQAB
   notify-url: http://eason.nat300.top/api/v1/alipay/alipay_notify_url
   return-url: https://gaga.plus
@@ -66,3 +69,18 @@ s-pay-mall:
     alias: hmall
     password: hmall123
     tokenTTL: 30m
+
+# 应用配置
+app:
+  config:
+    # 版本，方便通过接口版本升级
+    api-version: v1
+    # 跨域，开发阶段可以设置为 * 不限制
+    cross-origin: '*'
+    # SC 渠道配置 - 拼团对接渠道值、回调通知
+    group-buy-market:
+      api-url: http://127.0.0.1:8080    # 拼团平台地址
+      notify-url: http://127.0.0.1:8081/api/v1/alipay/group_buy_notify  # 拼团平台回调本系统地址
+      source: s01
+      chanel: c01
+

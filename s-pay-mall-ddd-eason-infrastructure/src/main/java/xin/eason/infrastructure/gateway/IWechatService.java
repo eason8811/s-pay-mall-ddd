@@ -18,8 +18,10 @@ public interface IWechatService {
 
     /**
      * 发送 <b>GET</b> 请求获取 <b>Access Token</b>
-     * @param request 向公众平台发送的请求参数的封装
-     * @return 返回带 <b>Access Token</b> 和过期时间的对象
+     * @param grantType 授权类型
+     * @param appid APP ID
+     * @param secret 密钥
+     * @return 获取 AccessToken 请求的响应数据传输对象
      */
     @GET("/cgi-bin/token")
     Call<WechatResponseDTO> getAccessToken(

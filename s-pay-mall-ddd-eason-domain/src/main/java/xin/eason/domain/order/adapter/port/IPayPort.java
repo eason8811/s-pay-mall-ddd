@@ -1,7 +1,9 @@
 package xin.eason.domain.order.adapter.port;
 
 import xin.eason.domain.order.model.aggregate.OrderAggregate;
+import xin.eason.domain.order.model.entity.MarketPayDiscountEntity;
 
+import java.time.LocalDateTime;
 import java.util.Map;
 
 public interface IPayPort {
@@ -22,4 +24,25 @@ public interface IPayPort {
      * @return 如果发送成功则返回模板信息的 <b>ID</b>
      */
     Long sendTemplate(String templateId, String openid, String turnToUrl, String accessToken, Map<String, String> dataMap);
+
+    /**
+     * 进行拼团订单锁定
+     * @param activityId 活动 ID
+     * @param teamId 拼团队伍 ID
+     * @param userId 用户 ID
+     * @param productId 商品 ID
+     * @param orderItemId 本地订单明细 ID
+     * @return 拼团订单支付折扣实体
+     */
+    MarketPayDiscountEntity lockMarketOrder(Long activityId, String teamId, String userId, String productId, String orderItemId);
+
+    /**
+     * 进行拼团订单结算
+     *
+     * @param userId  用户 ID
+     * @param tradeNo 本地订单明细 ID
+     * @param payTime 支付时间
+     * @return 支付成功的订单 ID
+     */
+    String settlementMarketOrder(String userId, String tradeNo, LocalDateTime payTime);
 }

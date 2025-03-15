@@ -15,6 +15,7 @@ import xin.eason.infrastructure.dao.OrderMapper;
 import xin.eason.infrastructure.dao.po.PayOrder;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -57,6 +58,9 @@ public class OrderRepository implements IOrderRepository {
                                 .orderStatus(OrderStatusVO.valueOf(unPayOrder.getStatus()))
                                 .orderTime(unPayOrder.getOrderTime())
                                 .totalAmount(unPayOrder.getTotalAmount())
+                                .deductionAmount(unPayOrder.getMarketDeductionAmount())
+                                .payAmount(unPayOrder.getPayAmount())
+                                .marketType(unPayOrder.getMarketType())
                                 .productName(unPayOrder.getProductName())
                                 .productId(unPayOrder.getProductId())
                                 .build()
@@ -82,6 +86,9 @@ public class OrderRepository implements IOrderRepository {
                 .totalAmount(orderItemEntity.getTotalAmount())
                 .status(orderItemEntity.getOrderStatus().getCode())
                 .payUrl(orderAggregate.getPayUrl())
+                .payAmount(orderItemEntity.getPayAmount())
+                .marketDeductionAmount(orderItemEntity.getDeductionAmount())
+                .marketType(orderItemEntity.getMarketType())
                 .createTime(LocalDateTime.now())
                 .updateTime(LocalDateTime.now())
                 .build();
@@ -100,6 +107,9 @@ public class OrderRepository implements IOrderRepository {
                 .orderId(payOrderEntity.getOrderId())
                 .payUrl(payOrderEntity.getPayUrl())
                 .status(payOrderEntity.getOrderStatus().getCode())
+                .marketType(payOrderEntity.getMarketType())
+                .marketDeductionAmount(payOrderEntity.getDeductionAmount())
+                .payAmount(payOrderEntity.getPayAmount())
                 .build();
         LambdaUpdateWrapper<PayOrder> updateWrapper = new LambdaUpdateWrapper<>();
         updateWrapper.eq(PayOrder::getOrderId, payOrder.getOrderId());
@@ -108,13 +118,16 @@ public class OrderRepository implements IOrderRepository {
 
     /**
      * 将指定订单编号的订单付款状态修改为支付成功
-     * @param tradeNo 订单编号
+     *
+     * @param orderIdList 订单编号列表
+     * @param payTime     支付时间
      */
     @Override
-    public void changeOrderStatusSuccess(String tradeNo) {
+    public void changeOrderStatusSuccess(List<String> orderIdList, LocalDateTime payTime) {
         LambdaUpdateWrapper<PayOrder> updateWrapper = new LambdaUpdateWrapper<>();
-        updateWrapper.eq(PayOrder::getOrderId, tradeNo)
-                        .set(PayOrder::getStatus, OrderStatusVO.PAY_SUCCESS);
+        updateWrapper.in(PayOrder::getOrderId, orderIdList)
+                .set(PayOrder::getStatus, OrderStatusVO.PAY_SUCCESS)
+                .set(PayOrder::getPayTime, payTime);
         orderMapper.update(updateWrapper);
     }
 
@@ -143,6 +156,9 @@ public class OrderRepository implements IOrderRepository {
                                 .orderItemId(payOrder.getOrderId())
                                 .orderStatus(OrderStatusVO.valueOf(payOrder.getStatus()))
                                 .totalAmount(payOrder.getTotalAmount())
+                                .deductionAmount(payOrder.getMarketDeductionAmount())
+                                .payAmount(payOrder.getPayAmount())
+                                .marketType(payOrder.getMarketType())
                                 .productId(payOrder.getProductId())
                                 .productName(payOrder.getProductName())
                                 .build()

@@ -3,13 +3,16 @@ package xin.eason.infrastructure.adapter.port;
 import com.google.common.cache.Cache;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import retrofit2.Response;
 import xin.eason.domain.order.adapter.port.IPayPort;
 import xin.eason.domain.order.model.aggregate.OrderAggregate;
+import xin.eason.domain.order.model.entity.MarketPayDiscountEntity;
+import xin.eason.infrastructure.gateway.IGroupBuyMarketService;
 import xin.eason.infrastructure.gateway.IWechatService;
-import xin.eason.infrastructure.gateway.dto.WechatTemplateRequestDTO;
-import xin.eason.infrastructure.gateway.dto.WechatTemplateResponseDTO;
+import xin.eason.infrastructure.gateway.dto.*;
+import xin.eason.types.common.Result;
 import xin.eason.types.exception.AppException;
 
 import java.io.IOException;
@@ -23,9 +26,18 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class PayPort implements IPayPort {
 
+    @Value("${app.config.group-buy-market.source}")
+    private String source;
+    @Value("${app.config.group-buy-market.chanel}")
+    private String chanel;
+    @Value("${app.config.group-buy-market.notify-url}")
+    private String notifyUrl;
+
     private final String SEND_SUCCESS_TEMP_ID = "BNGoy95cPSy1mjsFleykVN811OtXBO2rrsMUPuFMpKY";
 
     private final IWechatService iWechatService;
+
+    private final IGroupBuyMarketService iGroupBuyMarketService;
 
     private final Cache<String, String> cache;
 
@@ -76,6 +88,84 @@ public class PayPort implements IPayPort {
         } catch (IOException e) {
             log.error("发送模板信息请求过程出错!");
             throw new AppException(e.getMessage());
+        }
+    }
+
+    /**
+     * 进行拼团订单锁定
+     *
+     * @param activityId  活动 ID
+     * @param teamId      拼团队伍 ID
+     * @param userId      用户 ID
+     * @param productId   商品 ID
+     * @param orderItemId 本地订单明细 ID
+     * @return 拼团订单支付折扣实体
+     */
+    @Override
+    public MarketPayDiscountEntity lockMarketOrder(Long activityId, String teamId, String userId, String productId, String orderItemId) {
+        try {
+            LockMarketPayOrderRequestDTO requestDTO = LockMarketPayOrderRequestDTO.builder()
+                    .userId(userId)
+                    .teamId(teamId)
+                    .activityId(activityId)
+                    .goodsId(productId)
+                    .source(source)
+                    .channel(chanel)
+                    .outerOrderId(orderItemId)
+                    .notifyUrl(notifyUrl)
+                    .build();
+
+            Result<LockMarketPayOrderResponseDTO> response = iGroupBuyMarketService.lockMarketPayOrder(requestDTO).execute().body();
+            log.info("拼团订单锁定, userId: {}, request: {}, response: {}", userId, requestDTO, response);
+            if (response == null)
+                return null;
+            if (response.getCode() != 1)
+                throw new AppException("拼团订单锁定异常! 锁单服务响应代码为: " + response.getCode());
+
+            LockMarketPayOrderResponseDTO data = response.getData();
+
+            return MarketPayDiscountEntity.builder()
+                    .originalAmount(data.getOriginalPrice())
+                    .deductionAmount(data.getDiscountPrice())
+                    .payAmount(data.getPayPrice())
+                    .build();
+        } catch (IOException e) {
+            log.error("营销锁单失败 userId: {}, orderItemId: {}", userId, orderItemId, e);
+            return null;
+        }
+    }
+
+    /**
+     * 进行拼团订单结算
+     *
+     * @param userId  用户 ID
+     * @param tradeNo 本地订单明细 ID
+     * @param payTime 支付时间
+     * @return 支付成功的订单 ID
+     */
+    @Override
+    public String settlementMarketOrder(String userId, String tradeNo, LocalDateTime payTime) {
+        try {
+            SettlementOrderRequestDTO requestDTO = SettlementOrderRequestDTO.builder()
+                    .source(source)
+                    .channel(chanel)
+                    .userId(userId)
+                    .outerOrderId(tradeNo)
+                    .payTime(payTime)
+                    .build();
+            Result<SettlementOrderResponseDTO> response = iGroupBuyMarketService.settlementMarketPayOrder(requestDTO).execute().body();
+            log.info("拼团订单结算, userId: {}, request: {}, response: {}", userId, requestDTO, response);
+            if (response == null)
+                return null;
+            if (response.getCode() != 1)
+                throw new AppException("拼团订单锁定异常! 锁单服务响应代码为: " + response.getCode());
+
+            // 返回支付成功的本系统订单 ID
+            return response.getData().getOuterOrderId();
+
+        } catch (IOException e) {
+            log.error("营销结算失败 userId: {}, orderItemId: {}", userId, tradeNo, e);
+            return null;
         }
     }
 }
