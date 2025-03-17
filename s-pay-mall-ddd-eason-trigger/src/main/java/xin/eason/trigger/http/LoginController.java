@@ -24,7 +24,7 @@ public class LoginController {
      * 用户获取 <b>Ticket</b> 的接口
      * @return <b>Ticket</b>
      */
-    @GetMapping("/get_ticket")
+    @GetMapping("/weixin_qrcode_ticket")
     public Result<String> getTicket(){
         String ticket = loginService.getTicket();
         return Result.success(ticket);

@@ -50,6 +50,9 @@ public abstract class AbstractOrderService implements IOrderService{
                     .orderId(unpaidOrderEntity.getOrderItemId())
                     .payUrl(unpaidorderAggregate.getPayUrl())
                     .orderStatus(unpaidOrderEntity.getOrderStatus())
+                    .deductionAmount(unpaidOrderEntity.getDeductionAmount())
+                    .payAmount(unpaidOrderEntity.getPayAmount())
+                    .marketType(unpaidOrderEntity.getMarketType())
                     .build();
         } else if (null != unpaidOrderEntity && OrderStatusVO.CREATE.equals(unpaidOrderEntity.getOrderStatus())) {
             log.info("创建订单-存在，存在未创建支付单订单，创建支付单开始 userId:{} productId:{} orderId:{}", shopCartEntity.getUserId(), shopCartEntity.getProductId(), unpaidOrderEntity.getOrderItemId());
